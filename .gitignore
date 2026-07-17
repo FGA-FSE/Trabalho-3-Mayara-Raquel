@@ -3,6 +3,9 @@ build/
 managed_components/
 sdkconfig.old
 
+# Saida de build do MkDocs (gerada pelo CI)
+site/
+
 # Editores / SO
 .idea/
 *.swp

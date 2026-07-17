@@ -1,0 +1,2 @@
+# Dependências para buildar a documentação (MkDocs Material).
+mkdocs-material==9.7.6

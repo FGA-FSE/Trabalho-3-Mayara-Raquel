@@ -1,0 +1,773 @@
+/* ==========================================================
+   Brinsea Ovation 56 EX
+   Universidade de Brasília
+   Tema Material for MkDocs
+========================================================== */
+
+/* =======================
+   PALETA
+======================= */
+
+:root{
+
+    --md-primary-fg-color:#1F3A5F;
+    --md-primary-fg-color--light:#31516F;
+    --md-primary-fg-color--dark:#14263E;
+
+    --md-accent-fg-color:#D89D2A;
+
+    --background:#F7F9FC;
+    --surface:#FFFFFF;
+    --border:#E4E7EB;
+
+    --text:#374151;
+    --text-light:#64748B;
+
+    --shadow:
+        0 12px 30px rgba(15,23,42,.08);
+
+    --radius:18px;
+
+}
+
+
+/* =======================
+   LARGURA
+======================= */
+
+.md-grid{
+
+    max-width:1550px !important;
+
+}
+
+
+/* =======================
+   BODY
+======================= */
+
+body{
+
+    background:var(--background);
+
+}
+
+
+/* =======================
+   HEADER
+======================= */
+
+.md-header{
+
+    box-shadow:none;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.md-header__title{
+
+    font-weight:700;
+
+}
+
+
+/* =======================
+   CONTEÚDO
+======================= */
+
+.md-main__inner{
+
+    margin-top:1rem;
+
+}
+
+.md-content{
+
+    padding-bottom:4rem;
+
+}
+
+
+/* =======================
+   TEXTO
+======================= */
+
+.md-typeset{
+
+    color:var(--text);
+
+    font-size:.95rem;
+
+    line-height:1.95;
+
+}
+
+
+/* =======================
+   TÍTULOS
+======================= */
+.md-typeset h1{
+
+    text-align:center;
+
+    font-size:1.85rem;
+
+    font-weight:800;
+
+    color:#1F3A5F;
+
+    margin-bottom:.8rem;
+
+    letter-spacing:.02em;
+
+}
+
+.md-typeset h2{
+
+    text-align:center;
+
+    font-size:1.35rem;
+
+    font-weight:700;
+
+    margin-top:3rem;
+
+    margin-bottom:1rem;
+
+    color:#1F3A5F;
+
+    border:none;
+
+}
+
+.md-typeset h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:80px;
+
+    height:4px;
+
+    background:#D89D2A;
+
+    margin:15px auto;
+
+    border-radius:20px;
+
+}
+
+.md-typeset h3{
+
+    text-align:center;
+
+    font-size:1.10rem;
+
+    font-weight:700;
+
+    color:#1F3A5F;
+
+    margin-bottom:18px;
+
+}
+
+/* =======================
+   PARÁGRAFOS
+======================= */
+
+.md-typeset p{
+
+    text-align:justify;
+
+}
+
+
+/* =======================
+   HERO
+======================= */
+
+.hero{
+
+    text-align:center;
+
+    padding:3rem;
+
+    background:linear-gradient(
+
+        180deg,
+
+        #FFFFFF,
+
+        #F8FAFC
+
+    );
+
+    border-radius:24px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:4rem;
+
+}
+
+.hero h1{
+
+    margin-top:20px;
+
+}
+
+.hero p{
+
+    text-align:center;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.hero img{
+
+    width:100%;
+
+    max-width:720px;
+
+    margin:30px auto;
+
+    display:block;
+
+    border-radius:18px;
+
+    box-shadow:
+
+        0 20px 40px rgba(0,0,0,.08);
+
+}
+
+.hero-subtitle{
+
+    font-size:1.15rem;
+
+    color:#64748B;
+
+    margin-bottom:20px;
+
+}
+
+
+/* =======================
+   BOTÕES
+======================= */
+
+.md-button{
+
+    padding:.8rem 1.6rem;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.md-button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* =======================
+   LINKS
+======================= */
+
+.md-typeset a{
+
+    font-weight:600;
+
+}
+
+
+/* =======================
+   IMAGENS
+======================= */
+
+.md-typeset img{
+
+    border-radius:18px;
+
+}
+
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.cards-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+
+    gap:30px;
+
+    margin:45px auto;
+
+}
+
+.card{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:32px;
+
+    transition:all .30s ease;
+
+    box-shadow:0 10px 30px rgba(15,23,42,.05);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(15,23,42,.12);
+
+    border-color:#CBD5E1;
+
+}
+
+.card-icon{
+
+    font-size:3rem;
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+}
+
+.card h3{
+
+    text-align:center;
+
+    color:#1F3A5F;
+
+    margin-bottom:18px;
+
+    font-size:1.2rem;
+
+}
+
+.card p{
+
+    text-align:left;
+
+    color:#4B5563;
+
+    line-height:1.75;
+
+    margin:0;
+
+    font-size:.92rem;
+
+}
+
+/* ==========================================================
+   TECNOLOGIAS
+========================================================== */
+
+.tech-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    margin:35px auto;
+
+}
+
+.tech{
+
+    background:#EDF2F7;
+
+    color:#1F3A5F;
+
+    border-radius:999px;
+
+    padding:10px 18px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    transition:.25s;
+
+    border:1px solid #E2E8F0;
+
+}
+
+.tech:hover{
+
+    background:#1F3A5F;
+
+    color:white;
+
+}
+
+
+/* ==========================================================
+   TABELAS
+========================================================== */
+
+.md-typeset table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+    margin:35px auto;
+
+}
+
+.md-typeset table th{
+
+    background:#1F3A5F;
+
+    color:white;
+
+    text-align:center;
+
+    padding:15px;
+
+    font-weight:600;
+
+}
+
+.md-typeset table td{
+
+    padding:14px;
+
+    text-align:center;
+
+    border-bottom:1px solid #EEF2F7;
+
+}
+
+.md-typeset table tr:hover{
+
+    background:#F8FAFC;
+
+}
+
+
+/* ==========================================================
+   ADMONITIONS
+========================================================== */
+
+.md-typeset .admonition{
+
+    border-radius:18px;
+
+    box-shadow:0 10px 25px rgba(15,23,42,.05);
+
+}
+
+
+/* ==========================================================
+   CÓDIGO
+========================================================== */
+
+.md-typeset pre{
+
+    border-radius:18px;
+
+    border:1px solid var(--border);
+
+}
+
+.md-typeset code{
+
+    border-radius:8px;
+
+}
+
+
+/* ==========================================================
+   LISTAS
+========================================================== */
+
+.md-typeset ul{
+
+    line-height:2;
+
+}
+
+.md-typeset li{
+
+    margin-bottom:6px;
+
+}
+
+
+/* ==========================================================
+   IMAGENS
+========================================================== */
+
+.md-typeset figure{
+
+    text-align:center;
+
+}
+
+.md-typeset img{
+
+    transition:.25s;
+
+}
+
+.md-typeset img:hover{
+
+    transform:scale(1.01);
+
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.md-footer{
+
+    margin-top:5rem;
+
+}
+
+.md-footer-meta{
+
+    background:#1F3A5F;
+
+}
+
+
+/* ==========================================================
+   SCROLL
+========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#B6C0CD;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#8B9AAF;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media (max-width:900px){
+
+    .hero{
+
+        padding:2rem 1rem;
+
+    }
+
+    .hero img{
+
+        max-width:100%;
+
+    }
+
+    .cards-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .md-grid{
+
+        max-width:100% !important;
+
+    }
+
+    .md-typeset h1{
+
+        font-size:1.7rem;
+
+    }
+
+    .md-typeset h2{
+
+        font-size:1.3rem;
+
+    }
+    
+
+}
+
+/* ==========================================================
+   MELHORIAS VISUAIS
+========================================================== */
+
+/* Mais espaço entre as seções */
+
+.md-typeset hr{
+
+    margin:4rem auto;
+
+    border:none;
+
+    border-top:1px solid #E5E7EB;
+
+}
+
+
+/* Blocos de informação */
+
+blockquote{
+
+    border-left:5px solid #D89D2A;
+
+    background:#FFF;
+
+    padding:15px 20px;
+
+    border-radius:10px;
+
+}
+
+
+/* Centralização das tabelas */
+
+.md-typeset table{
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+}
+
+
+/* Botões */
+
+.hero .md-button{
+
+    margin:8px;
+
+}
+
+
+/* Cards com altura igual */
+
+.cards-container{
+
+    align-items:stretch;
+
+}
+
+.card{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.card p{
+
+    flex:1;
+
+}
+
+
+/* Animação suave */
+
+*{
+
+    scroll-behavior:smooth;
+
+}
+
+
+/* Espaçamento entre títulos e texto */
+
+.md-typeset h2{
+
+    margin-bottom:25px;
+
+}
+
+.md-typeset h3{
+
+    margin-bottom:15px;
+
+}
+
+
+/* Tabelas */
+
+.md-typeset table td{
+
+    vertical-align:middle;
+
+}
+
+
+/* Hero */
+
+.hero{
+
+    overflow:hidden;
+
+}
+
+
+/* Badge */
+
+.tech{
+
+    user-select:none;
+
+}
+
+
+/* Footer */
+
+.md-footer-meta__inner{
+
+    font-size:.9rem;
+
+}

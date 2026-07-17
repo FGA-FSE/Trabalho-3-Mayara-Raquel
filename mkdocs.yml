@@ -1,0 +1,101 @@
+site_name: Incubadora Inteligente — ESP32
+site_description: Documentação do firmware da incubadora em ESP32 (ESP-IDF) — componentes, funções e arquitetura.
+site_author: Universidade de Brasília (UnB)
+
+repo_name: FGA-FSE/Trabalho-3-Mayara-Raquel
+repo_url: https://github.com/FGA-FSE/Trabalho-3-Mayara-Raquel
+edit_uri: ""
+
+copyright: |
+  © 2026 Universidade de Brasília • Sistemas Embarcados
+
+theme:
+  name: material
+  language: pt-BR
+
+  logo: imagens/logo.png
+  favicon: imagens/favicon.png
+
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Alternar para modo escuro
+
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Alternar para modo claro
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  icon:
+    repo: fontawesome/brands/github
+
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+    - content.tooltips
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/FGA-FSE/Trabalho-3-Mayara-Raquel
+
+nav:
+  - Home: index.md
+
+  - Produto:
+      - Componentes: 02-produto/componentes.md
+      - Funções: 02-produto/funcoes.md
+
+  - Análise Técnica:
+      - Arquitetura: 03-analise-tecnica/arquitetura.md
