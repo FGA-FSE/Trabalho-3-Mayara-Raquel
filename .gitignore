@@ -1,0 +1,11 @@
+# Saida de build do ESP-IDF (nao versionar)
+build/
+managed_components/
+sdkconfig.old
+
+# Editores / SO
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

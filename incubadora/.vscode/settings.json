@@ -1,0 +1,19 @@
+{
+    "idf.currentSetup": "/home/eucaria/.espressif/v6.0.2/esp-idf",
+    "idf.port": "/dev/ttyUSB0",
+    "idf.flashType": "UART",
+    "cmake.configureOnOpen": false,
+    "cmake.automaticReconfigure": false,
+    "files.exclude": {
+        "**/build": true,
+        "**/.git": true,
+        "**/sdkconfig.old": true
+    },
+    "search.exclude": {
+        "**/build": true,
+        "**/managed_components": true
+    },
+    "files.watcherExclude": {
+        "**/build/**": true
+    }
+}

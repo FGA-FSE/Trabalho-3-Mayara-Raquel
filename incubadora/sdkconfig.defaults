@@ -1,0 +1,4 @@
+# Configuracoes padrao do projeto (aplicadas no primeiro build / set-target).
+# Flash de 4 MB (chip real da placa) e particao de app maior para caber Wi-Fi + HTTP.
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+CONFIG_PARTITION_TABLE_SINGLE_APP_LARGE=y

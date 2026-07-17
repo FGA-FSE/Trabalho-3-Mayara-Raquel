@@ -1,0 +1,28 @@
+idf_component_register(
+    SRCS
+        "main.c"
+        "shared_state.c"
+        "task_sensor.c"
+        "task_dht11.c"
+        "task_display.c"
+        "task_led_status.c"
+        "task_buzzer.c"
+        "task_control.c"
+        "task_wifi_ap.c"
+        "task_http_server.c"
+    INCLUDE_DIRS "."
+    REQUIRES
+        bme280
+        ssd1306_display
+        rgb_led
+        dht11
+        buzzer
+        rele
+        esp_driver_i2c
+        esp_timer
+        nvs_flash
+        esp_wifi
+        esp_netif
+        esp_event
+        esp_http_server
+)
