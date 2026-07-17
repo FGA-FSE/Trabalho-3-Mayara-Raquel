@@ -13,7 +13,6 @@ theme:
   name: material
   language: pt-BR
 
-  logo: imagens/logo.png
   favicon: imagens/favicon.png
 
   palette:

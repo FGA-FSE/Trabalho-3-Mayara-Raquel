@@ -1,18 +1,19 @@
 <div class="hero">
 
-<img src="imagens/logo.png" alt="Logo" width="110">
+<img src="imagens/incubadora.png" alt="Incubadora conectada à ESP32 na protoboard">
 
 <h1>🐣 Incubadora Inteligente</h1>
 
 <p class="hero-subtitle">Firmware em ESP32 · ESP-IDF</p>
 
-<p><b>Monitoramento de temperatura e umidade, com controle do aquecedor, alarme e página web.</b></p>
+<p><b>Monitoramento de temperatura e umidade, com controle do aquecedor, alarme sonoro/visual e página web.</b></p>
 
 <p>
 Esta documentação descreve o firmware da incubadora desenvolvido em <b>ESP32</b> com o
-framework <b>ESP-IDF</b>. O foco é direto: mostrar os <b>componentes</b> de hardware
-utilizados e onde cada um está ligado na ESP, as <b>funções</b> (tarefas) que compõem o
-sistema e o que cada uma faz, e a <b>arquitetura</b> que integra tudo.
+framework <b>ESP-IDF</b>. O objetivo é ser direto e, ao mesmo tempo, completo: mostrar quais
+<b>componentes</b> de hardware são usados e em que pino da ESP cada um está ligado, quais são
+as <b>funções</b> (tarefas) que compõem o sistema e o que cada uma faz, e como a
+<b>arquitetura</b> integra tudo de forma organizada e segura.
 </p>
 
 <br>
@@ -27,33 +28,51 @@ sistema e o que cada uma faz, e a <b>arquitetura</b> que integra tudo.
 
 # 📋 Visão Geral
 
-O sistema mede **temperatura** e **umidade** dentro da incubadora, mostra os valores em um
-**display OLED** e em uma **página web** (via Wi-Fi), sinaliza o estado com um **LED RGB** e
-um **buzzer**, e mantém a temperatura na faixa ideal ligando e desligando um **aquecedor**
-através de um **relé**.
+A incubadora precisa manter, dentro da câmara, uma **temperatura** e uma **umidade**
+adequadas ao desenvolvimento dos ovos. Para isso, o firmware faz três coisas o tempo todo:
+**mede** o ambiente, **mostra** essas informações e **age** sobre o aquecedor para corrigir a
+temperatura quando ela sai do ponto desejado.
 
-Todo o firmware roda sobre o **FreeRTOS**: cada responsabilidade fica em uma *tarefa*
-independente, e todas se comunicam por um **estado compartilhado** protegido por *mutex* —
-sem variáveis globais soltas.
+Na prática, o sistema lê a temperatura e a pressão com o sensor **BMP280** e a umidade com o
+**DHT11**; exibe os valores em um **display OLED** e em uma **página web** acessível pelo
+celular; sinaliza a situação com um **LED RGB** (verde quando está tudo bem, vermelho quando
+sai da faixa) e um **buzzer** de alarme; e liga ou desliga um **aquecedor** através de um
+**relé**, mantendo a temperatura numa faixa estreita.
+
+Cada uma dessas responsabilidades é uma **tarefa** independente rodando sobre o
+**FreeRTOS** (o sistema operacional de tempo real embutido no ESP-IDF). As tarefas não
+conversam diretamente entre si: todas trocam informação por um **estado compartilhado**
+protegido, o que mantém o código organizado e evita conflitos de acesso.
+
+??? info "Detalhe técnico — por que FreeRTOS e estado compartilhado"
+    O ESP32 é *dual-core* e o ESP-IDF já traz o **FreeRTOS** como escalonador. Em vez de um
+    único laço gigante (`while(1)`) fazendo tudo, o firmware cria **tarefas** com prioridades
+    e períodos próprios — ler sensor, controlar aquecedor, atualizar display, etc. Isso deixa
+    cada parte simples e independente.
+
+    O ponto delicado é que várias tarefas acessam **o mesmo dado** (a última leitura). Se duas
+    mexerem ao mesmo tempo, o valor pode corromper (condição de corrida). Por isso existe o
+    `shared_state`: uma estrutura única protegida por **mutex** (semáforo de exclusão mútua),
+    que serializa os acessos. Detalhes na página de [Arquitetura](03-analise-tecnica/arquitetura.md).
 
 <div class="cards-container">
 
 <div class="card">
 <div class="card-icon">📦</div>
 <h3>Componentes</h3>
-<p>Os sensores, atuadores e o display, com o pino da ESP em que cada um está ligado e o que faz.</p>
+<p>Os sensores, atuadores e o display, com o pino da ESP em que cada um está ligado, o que faz e como é controlado.</p>
 </div>
 
 <div class="card">
 <div class="card-icon">⚙️</div>
 <h3>Funções</h3>
-<p>As tarefas do FreeRTOS: leitura dos sensores, controle do aquecedor, alarme, LED e servidor web.</p>
+<p>As tarefas do FreeRTOS: leitura dos sensores, controle do aquecedor por histerese, alarme, LED e servidor web.</p>
 </div>
 
 <div class="card">
 <div class="card-icon">🧩</div>
 <h3>Arquitetura</h3>
-<p>Como os componentes e as tarefas se organizam em torno do estado compartilhado.</p>
+<p>As camadas do projeto e como os componentes e as tarefas se organizam em torno do estado compartilhado.</p>
 </div>
 
 </div>
