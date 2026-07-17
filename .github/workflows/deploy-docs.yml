@@ -41,11 +41,6 @@ jobs:
       - name: Build do site
         run: mkdocs build
 
-      - name: Habilitar e configurar o GitHub Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
       - name: Enviar artefato do Pages
         uses: actions/upload-pages-artifact@v3
         with:
