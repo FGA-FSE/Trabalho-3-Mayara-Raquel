@@ -1,6 +1,7 @@
 site_name: Incubadora Inteligente — ESP32
 site_description: Documentação do firmware da incubadora em ESP32 (ESP-IDF) — componentes, funções e arquitetura.
 site_author: Universidade de Brasília (UnB)
+site_url: https://fga-fse.github.io/Trabalho-3-Mayara-Raquel/
 
 repo_name: FGA-FSE/Trabalho-3-Mayara-Raquel
 repo_url: https://github.com/FGA-FSE/Trabalho-3-Mayara-Raquel
